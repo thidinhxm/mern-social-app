@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Topbar.module.scss';
 import { Search, Person, Chat, Notifications } from '@mui/icons-material'
-import { Person1 } from '../../assets/images/person/index.js';
+import { Person1 } from '../../assets/images/person/index';
 
 function Topbar() {
   return (
