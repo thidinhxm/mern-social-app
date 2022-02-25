@@ -3,7 +3,7 @@ import { Gift, Ad } from '../../assets/images/icon/index';
 import { Users } from '../../dumyData';
 import Online from '../online/Online';
 
-function Rightbar({ profile }) {
+function Rightbar({ user }) {
   const HomeRightbar = () => {
     return (
       <>
@@ -31,15 +31,17 @@ function Rightbar({ profile }) {
         <div className={classes.rightbarInfo}>
           <div className={classes.rightbarInfoItem}>
             <span className={classes.rightbarInfoKey}>City:</span>
-            <span className={classes.rightbarInfoValue}>Paris</span>
+            <span className={classes.rightbarInfoValue}>{user.city}</span>
           </div>
           <div className={classes.rightbarInfoItem}>
             <span className={classes.rightbarInfoKey}>From:</span>
-            <span className={classes.rightbarInfoValue}>Lodon</span>
+            <span className={classes.rightbarInfoValue}>{user.from}</span>
           </div>
           <div className={classes.rightbarInfoItem}>
             <span className={classes.rightbarInfoKey}>Relationship</span>
-            <span className={classes.rightbarInfoValue}>Single</span>
+            <span className={classes.rightbarInfoValue}>
+              {user.relationship === 1 ? 'Single' : user.relationship === 2 ? 'In a relationship' : 'Married'}
+            </span>
           </div>
         </div>
         <h4 className={classes.rightbarTitle}>User Friends</h4>
@@ -58,7 +60,7 @@ function Rightbar({ profile }) {
   return (
     <div className={classes.rightbar}>
       <div className={classes.rightbarWrapper}>
-        {profile ? <ProfileRightbar /> : <HomeRightbar />}
+        {user ? <ProfileRightbar /> : <HomeRightbar />}
       </div>
     </div>
   )

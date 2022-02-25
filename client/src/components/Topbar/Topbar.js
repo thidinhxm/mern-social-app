@@ -1,13 +1,16 @@
-import React from 'react';
-import classes from './Topbar.module.scss';
 import { Search, Person, Chat, Notifications } from '@mui/icons-material'
+import { Link } from 'react-router-dom'
+
+import classes from './Topbar.module.scss';
 import { Person1 } from '../../assets/images/person/index';
 
 function Topbar() {
   return (
     <div className={classes.topbarContainer}>
       <div className={classes.topbarLeft}>
-        <span className={classes.logo}>ThiSocial</span>
+        <Link to='/' style={{ textDecoration: 'none' }}>
+          <span className={classes.logo}>ThiSocial</span>
+        </Link>
       </div>
       <div className={classes.topbarCenter}>
         <div className={classes.searchbar}>
