@@ -1,6 +1,7 @@
 import classes from './Sidebar.module.scss';
 import { RssFeed, Chat, PlayCircleFilledOutlined, Bookmark, Group, HelpOutline, WorkOutline, Event, School } from '@mui/icons-material';
-import {Person2, Person3, Person4, Person5, Person6, Person7} from '../../assets/images/person/index.js';
+import CloseFriend from '../closeFriend/CloseFriend';
+import {Users} from '../../dumyData';
 function Sidebar() {
   return (
     <div className={classes.sidebar}>
@@ -47,30 +48,9 @@ function Sidebar() {
         <hr className={classes.sidebarHr} />
 
         <ul className={classes.sidebarFriendList}>
-          <li className={classes.sidebarFriend}>
-            <img src={Person2} alt="" className={classes.sidebarFriendImg} />
-            <span className={classes.sidebarFriendName}>Jeremy Nguyen</span>
-          </li>
-          <li className={classes.sidebarFriend}>
-            <img src={Person3} alt="" className={classes.sidebarFriendImg} />
-            <span className={classes.sidebarFriendName}>Jeremy Nguyen</span>
-          </li>
-          <li className={classes.sidebarFriend}>
-            <img src={Person4} alt="" className={classes.sidebarFriendImg} />
-            <span className={classes.sidebarFriendName}>Jeremy Nguyen</span>
-          </li>
-          <li className={classes.sidebarFriend}>
-            <img src={Person5} alt="" className={classes.sidebarFriendImg} />
-            <span className={classes.sidebarFriendName}>Jeremy Nguyen</span>
-          </li>
-          <li className={classes.sidebarFriend}>
-            <img src={Person6} alt="" className={classes.sidebarFriendImg} />
-            <span className={classes.sidebarFriendName}>Jeremy Nguyen</span>
-          </li>
-          <li className={classes.sidebarFriend}>
-            <img src={Person7} alt="" className={classes.sidebarFriendImg} />
-            <span className={classes.sidebarFriendName}>Jeremy Nguyen</span>
-          </li>
+          {Users.map(user => (
+            <CloseFriend key={user.id} friend={user}/>
+          ))}
         </ul>
       </div>
     </div>
